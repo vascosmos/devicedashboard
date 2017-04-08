@@ -1,0 +1,9 @@
+/node/
+/src/main/webapp/bower_components/
+/.settings/
+/node_modules/
+/target/
+/.classpath
+/.project
+/bower_components/
+/dist/
