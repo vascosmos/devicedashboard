@@ -91,7 +91,7 @@ $(function() {
     },
     data: {
       type: 'line',
-      url: 'api/dashboard/gsm/overallcisco',
+      url: 'api/dashboard/gsm/overallvascosmos',
       mimeType: 'json',
       onclick: function(d, element) {
         console.log(url);

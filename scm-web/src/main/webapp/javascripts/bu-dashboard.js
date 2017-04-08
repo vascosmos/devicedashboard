@@ -208,7 +208,7 @@ $(function() {
       types: {
         Savings: 'spline'
       },
-      url: 'api/dashboard/bu/overallcisco',
+      url: 'api/dashboard/bu/overallvascosmos',
       mimeType: 'json',
       onclick: function(d, element) {
         console.log(url);
