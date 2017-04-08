@@ -1,3 +1,0 @@
-{
-  "sub": true // True: stop complaints about using [] instead of dot notation.
-}
