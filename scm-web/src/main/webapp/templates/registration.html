@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scmApp">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Register User</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+  <!-- MetisMenu CSS -->
+  <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+  <!-- Timeline CSS -->
+  <link href="../sb-admin-dist/css/timeline.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../sb-admin-dist/css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stilearn.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.3/css/jquery.mmenu.all.css">
+  
+  <link href="../bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
+  <link href="../bower_components/angularjs-slider/dist/rzslider.min.css" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/impactchart.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <nav class="navbar navbar-custom navbar-static-top header" role="navigation" style="margin-bottom: 0;">
+      <div class="header-brand">
+       <!--  <div class="navbar-header">
+          <img id="logo-img" alt="Cisco" height="40" width="40" src="./images/cisco2.png">
+        </div>
+        <h1 id="title" class="navbar-brand text-primary"><a href="bu-dashboard">Product Cost Analysis And Modeling</a>
+        </h1> -->
+      </div>
+      <!-- /.navbar-header -->
+
+      <!-- header-profile -->
+      {{#if userName}}
+      <div class="header-profile">
+        <div class="profile-nav">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-user fa-fw"></i>
+            <span class="profile-username">{{{userName}}}</span>
+            <span class="fa fa-angle-down"></span>
+          </a>
+          <ul class="dropdown-menu animated flipInX pull-right" role="menu">
+            <li><a id="logout" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+            </li>
+          </ul>
+        </div>
+        <div class="profile-picture">
+          <img alt="me" src="images\unkown.jpg" style="width:38.5px;height:38.5px">
+        </div>
+      </div>
+      <!-- header-profile -->
+      {{/if}}
+    </nav><div ng-controller="regisCtrl">    <div id="main-alert" ng-class="getCSSClass()" >        <button type="button" class="close">          <span aria-hidden="true">&times;</span>          <span class="sr-only">Close</span>        </button>        <strong id="error">[[error]]</strong>    </div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="h3 panel-title text-center"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;Registraion</div>
+    </div>
+    <div class="panel-body">
+      <form role="form"  id="reg_form"  ng-disabled="form.$invalid" ng-submit="regi()">
+
+	<fieldset>
+      <!-- field start -->
+	  <div class="form-group" >
+        <label class="col-md-10 control-label">First Name</label>
+        <div class="col-md-30  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="first_name" id="cpn-swap-to" placeholder="First Name" class="form-control"  type="text" ng-model="first">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+
+ <!-- field start -->
+	  <div class="form-group">
+        <label class="col-md-10 control-label">Last Name</label>
+        <div class="col-md-20  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="last_name" id="cpn-swap-to" placeholder="Last Name" class="form-control"  type="text" ng-model="last">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+
+ <!-- field start -->
+	  <div class="form-group">
+        <label class="col-md-10 control-label">Company</label>
+        <div class="col-md-20  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <input  name="company" id="cpn-swap-to" placeholder="Company Name" class="form-control"  type="text" ng-model="company">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+ <!-- field start -->
+	  <div class="form-group">
+        <label class="col-md-10 control-label">Email</label>
+        <div class="col-md-20  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input  name="email" id="cpn-swap-to" placeholder="Email ID" class="form-control"  type="text" ng-model="email">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+
+	<!-- field start -->
+	  <div class="form-group">
+        <label class="col-md-10 control-label">Phone Number</label>
+        <div class="col-md-20  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" id="cpn-swap-to" placeholder="Phone Number" class="form-control"  type="text" ng-model="phone">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+
+	<!-- field start -->
+	  <div class="form-group">
+        <label class="col-md-10 control-label">Country</label>
+        <div class="col-md-20  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input  name="country" id="cpn-swap-to" placeholder="Country" class="form-control"  type="text" ng-model="country">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+     
+	 	<!-- field start -->
+	  <div class="form-group">
+        <label class="col-md-10 control-label">State</label>
+        <div class="col-md-20  inputGroupContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input  name="state" id="cpn-swap-to" placeholder="Enter State/Province" class="form-control"  type="text" ng-model="state">
+          </div>
+        </div>
+      </div>
+	<!-- field end -->
+  
+        <button id="submit" class="btn btn-primary" type="submit">Submit <span class="glyphicon glyphicon-send"></span>
+          <span><i id="f-submit-spinner" class="fa fa-spinner fa-spin display-none"></i>
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="../bower_components/lodash/lodash.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    
+    <script src="../bower_components/select2/dist/js/select2.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../sb-admin-dist/js/sb-admin-2.js"></script>
+    
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="../bower_components/angularjs-slider/dist/rzslider.min.js"></script>
+    <script src="app.js"></script>
+    
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.3/js/jquery.mmenu.min.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/export/bootstrap-table-export.js"></script>
+    <script src="../javascripts/common.js"></script>
+
+
+	
+	<div class="bottom-buffer"> 
+      	{{#block "content" }} {{/block}}
+    </div>		
+
+</body>
+<script type="text/javascript">
+ 
+   $(document).ready(function() {
+    $('#reg_form').bootstrapValidator({
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            first_name: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+						message: 'First Name should be Mininum 2 characters'
+                    },
+                        notEmpty: {
+                        message: 'Please Enter your first name'
+                    }
+                }
+            },
+             last_name: {
+                validators: {
+                     stringLength: {
+                        min: 2,
+						message: 'Last Name should be Mininum 2 characters'
+                    },
+                    notEmpty: {
+                        message: 'Please Enter your last name'
+                    }
+                }
+            },
+           
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please Enter your phone number'
+                    },
+					stringLength: {
+                        min: 9,
+						message: 'Mobile Number should be Mininum 9 characters, Enter with Country code'
+                    },
+                    phone: {
+                       // country: 'UK',
+                        message: 'Please Enter a vaild phone number with area code'
+                    }
+                }
+            },
+            address: {
+                validators: {
+                     stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please Enter your street address'
+                    }
+                }
+            },
+            city: {
+                validators: {
+                     stringLength: {
+                        min: 4,
+                    },
+                    notEmpty: {
+                        message: 'Please Enter your city'
+                    }
+                }
+            },
+            state: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please select your state'
+                    }
+                }
+            },
+            zip: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please Enter your zip code'
+                    },
+                    zipCode: {
+                        country: 'UK',
+                        message: 'Please supply a vaild zip code'
+                    }
+                }
+            },
+		comment: {
+                validators: {
+                      stringLength: {
+                        min: 10,
+                        max: 200,
+                        message:'Please enter at least 10 characters and no more than 200'
+                    },
+                    notEmpty: {
+                        message: 'Please supply a description about yourself'
+                    }
+                    }
+                 },	
+	 email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please Enter your email address'
+                    },
+                    emailAddress: {
+                        message: 'Please Enter a valid email address'
+                    }
+                }
+            },
+					
+	password: {
+            validators: {
+                identical: {
+                    field: 'confirmPassword',
+                    message: 'Confirm your password below - type same password please'
+                }
+            }
+        },
+        confirmPassword: {
+            validators: {
+                identical: {
+                    field: 'password',
+                    message: 'The password and its confirm are not the same'
+                }
+            }
+         },
+			
+            
+            }
+        })
+		
+ 	
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#reg_form').data('bootstrapValidator').resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
+});
+
+ </script>
+</html>

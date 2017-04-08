@@ -1,0 +1,288 @@
+.node circle {
+	fill: #fff;
+	stroke: #36A933;
+	stroke-width: 3px;
+}
+
+.node text {
+	font: 12px sans-serif;
+}
+
+.link {
+	fill: none;
+	stroke: #984E13;
+	stroke-width: 2px;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin: 0;
+	font-size: 14px;
+	font-family: "Helvetica Neue", Helvetica;
+	background-color: #FFF;
+}
+
+body li {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+}
+
+.node-circle:hover {
+	cursor: pointer;
+}
+
+.svg {
+	border: 1px solid #337ab7;
+	box-shadow: 1px 2px 2px #888888;
+	overflow: hidden;
+	height: 800px;
+	border-radius: 5px;
+}
+
+.painted-link {
+	stroke: red;
+}
+
+.swap-btn {
+	cursor: pointer;
+}
+
+.table-row-title {
+	background-color: #337ab7;
+	color: #fff;
+}
+
+.table-rightside {
+	padding-left: 25px;
+	padding-right: 50px;
+}
+
+.node-context-table {
+	overflow-x: scroll;
+}
+
+#help-popover {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+}
+
+#key-popover {
+	position: absolute;
+	top: 5px;
+	left: 20px;
+	
+}
+#search-spinner {
+	margin-left: 10px;
+}
+
+#change-spinner {
+	margin-left: 10px;
+}
+
+.table-svg {
+	width: 55px;
+	height: 20px;
+}
+
+.navbar-inverse {
+	background-color: #227;
+}
+
+#logo-img {
+	margin: 7px 15px 4px 4px;
+}
+
+#title {
+	font-family: 'Lato', serif;
+	color: #FFF;
+	margin-left: 5px;
+}
+
+.a {
+	text-decoration: none;
+	/* //color: #337ab7; */
+	color:#66FF66
+}
+
+.impact-data {
+	min-height: 24px;
+}
+
+/* CPN MODEL REVIEW PAGE */
+tr.review-material-costs > td:first-child{
+	padding-left:40px;
+}
+
+/* FORM STYLING */
+form {
+	max-width: 340px;
+	padding: 15px;
+	margin: 0 auto
+}
+
+form.free-width-form {
+	max-width: 100%;
+}
+
+form h2 {
+	margin-bottom: 10px
+}
+
+form input {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.form-signin .form-control:focus {
+	z-index: 2
+}
+
+form .top .input-group-addon, form .top input {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0
+}
+
+form .middle .input-group-addon, form .middle input {
+	margin-bottom: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0
+}
+
+form .last .input-group-addon, last .middle input {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0
+}
+
+form .only {
+	margin-bottom: 10px
+}
+
+/* MODELS PAGE */
+.model-details-container {
+	border-bottom: 2px solid #CCC;
+	border-left: 2px solid #CCC;
+	border-right: 2px solid #CCC;
+}
+
+/* DASHBOARDS PAGE */
+.selected-panel {
+	box-shadow: 2px 2px 6px 0px green;
+	border-color: green;
+	border: 1px solid green;
+}
+
+.chart-edit-btn {
+	margin-left: 5px;
+}
+
+/* COMPONENT MODELING PAGE */
+
+/* COMPONENT MODELING REVIEW PAGE */
+.review-list li {
+	margin-top: 8px;
+}
+
+.review-panel {
+	min-height: 200px;
+}
+
+.review-panel .super-icon {
+	min-width: 100%;
+}
+
+/* IMPACT REVIEW PAGE */
+.grey-row {
+	background-color: #888;
+}
+
+/* GENERAL USE */
+.display-none {
+	display: none;
+}
+
+.header {
+	margin-bottom: 10px;
+}
+
+.top-buffer {
+	margin-top: 10px;
+}
+
+.bottom-buffer {
+	margin-bottom: 10px;
+}
+
+.left-buffer {
+	margin-left: 10px;
+}
+
+.main {
+	width: 50%;
+}
+
+/* SLIDERS */
+
+.slider-control {
+	height: 2em;
+	padding-top: .5em;
+}
+
+.slider {
+	height: 2px;
+	border: 1px solid black;
+}
+
+.slider-handle {
+	height: 2em;
+	width: 2em;
+	border: 1px solid black;
+	border-radius: 2px;
+	background: #fff;
+	cursor: pointer;
+	z-index: 2;
+	border-radius: 16px;
+	background-color: #0db9f0;
+}
+
+.slider-handle:hover {
+	background: #ddd;
+}
+
+.supplier-color-1 .rz-pointer, .slider>.slider-handle:nth-child(3n + 1) {
+	background-color: #49b64d;
+}
+
+.supplier-color-1 .supplier-dot {
+	color: #49b64d;
+}
+
+.supplier-color-2 .rz-pointer, .slider>.slider-handle:nth-child(3n + 2) {
+	background-color: #b27ecc;
+}
+
+.supplier-color-2 .supplier-dot {
+	color: #b27ecc;
+}
+
+.supplier-color-3 .rz-pointer, .slider>.slider-handle:nth-child(3n) {
+	background-color: #5dbfe2;
+}
+
+.supplier-color-3 .supplier-dot {
+	color: #5dbfe2;
+}
+
+rzslider span.rz-bubble {
+	top: -38px;
+}
